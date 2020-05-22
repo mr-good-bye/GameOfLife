@@ -34,12 +34,12 @@ def update(frame, img, grid, N):
 
 def main():
     N = 100
-    updateInterval = 50
+    updateInterval = 5
     grid = np.array([])
     grid = random_grid(N)
 
     fig, ax = plt.subplots()
-    img = ax.imshow(grid, interpolation='nearest')
+    img = ax.imshow(grid, interpolation='bilinear')
     ani = anim.FuncAnimation(fig, update, fargs=(img,grid,N,),
                              frames=10,
                              interval=updateInterval,
